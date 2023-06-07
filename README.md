@@ -1,2 +1,3 @@
-# django-base-template
+# django-store
+
 
