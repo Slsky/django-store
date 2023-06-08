@@ -1,0 +1,27 @@
+<div class="container">
+    <nav class="navbar">
+        <ul class="navbar__list">
+            <li class="navbar__item">
+                <a class="navbar__link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a class="navbar__link" href="{% url 'posts:post_list' %}">All Posts</a>
+            </li>
+            <li class="navbar__item">
+                <a class="navbar__link" href="{% url 'posts:post_create' %}">New Post</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<style>
+    .navbar__list {
+        display: flex;
+    }
+
+    .navbar__item {
+        list-style: none;
+        margin-right: 2em;
+    }
+    .navbar__link {}
+</style>

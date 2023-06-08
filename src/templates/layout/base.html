@@ -1,0 +1,33 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% if title %} {{ title }} {% else %} My Site {% endif %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="{% static 'css/dark-theme.css' %}">
+    <!-- Scripts -->
+    <script async type="text/javascript" src="{% static 'js/darkTheme.js' %}"></script>
+    <!-- Scripts END -->
+    {% block head %}{% endblock %}
+
+   
+
+</head>
+<body class="{% if is_dark_theme %} dark-theme {% endif %}">
+    {{ is_dark_theme }}
+    {% comment %} <img src="{% static 'vendor/img/wallpaper.jpg' %}" alt="My image"> {% endcomment %}
+    {% block header %}{% endblock %}
+
+    {% block nav %}
+        {% include "layout/nav/nav.html" %}
+    {% endblock %}
+
+    {% block aside %}{% endblock %}
+
+    {% block main %}{% endblock %}
+    
+    {% block footer %}{% endblock %}
+</body>
+</html>

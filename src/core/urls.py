@@ -23,6 +23,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view, name='home'),
+    path('products/', include('products.urls', namespace='products')),
 ]
 
 if settings.DEBUG:
@@ -30,3 +31,4 @@ if settings.DEBUG:
     from django.conf.urls.static import static
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns.append(path('__debug__/', include('debug_toolbar.urls')))
+    urlpatterns.append(path("__reload__/", include("django_browser_reload.urls")),)
